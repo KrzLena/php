@@ -23,13 +23,23 @@
                 <input type="radio" name="e" value = "H">Higher<br>
                 <br>
                 <p>Choose a language</p>
-                <select name = 'lang' size = 5 multiple>
+                <select name = 'lang[]' size = 5 multiple>
                     <option value="eng">English</option>
                     <option value="pol">Polish</option>
                     <option value="ger">German</option>
                     <option value="spa">Spanish</option>
                     <option value="py">Python</option>
                 </select><br>
+                
+                <p>Enter a color</p>
+                <input name = "color" list = "color"></input>
+                <datalist id = "color" name = "color">
+                    <option value="black">Black</option>
+                    <option value="white">White</option>
+                    <option value="green">Green</option>
+                    <option value="blue">Blue</option>
+                </datalist>
+
                 <input type="checkbox" name = "agree">I consent to the processing of my personal data<br>
                 <br>
                 <button type="submit">Submit</button>
