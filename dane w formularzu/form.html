@@ -1,10 +1,11 @@
+<!DOCTYPE html>
 <html>
     <head>
         <title>Form</title>
         <meta charset="utf-8">
     </head>
     <body>
-        <form action = "formscr.php" method = "post"> <!--You can use get-->
+        <form action = "form.php" method = "post"> <!--You can use get-->
             <fieldset>
                 <legend>Application form</legend>
                 Name:<br>
@@ -30,7 +31,11 @@
                     <option value="spa">Spanish</option>
                     <option value="py">Python</option>
                 </select><br>
-                
+
+                <label>Submit the file:
+                    <input type = 'file' name = 'file1'>
+                </label>
+               
                 <p>Enter a color</p>
                 <input name = "color" list = "color"></input>
                 <datalist id = "color" name = "color">
@@ -44,6 +49,11 @@
                 <br>
                 <button type="submit">Submit</button>
                 <button type="reset">Clear</button>
+
+                <label>Submit the file:
+                    <input type = 'file' name = 'file1'>
+                </label>
+                
 
             </fieldset>
         </form>
