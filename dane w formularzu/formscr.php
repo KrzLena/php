@@ -83,8 +83,32 @@ else
 //----------------------------------------------------------------------------------file1:
 
 echo "File data:<br>";
-echo "File name: ".$_FILES['file1']['name'];
-echo "Temporary location: ".$_FILES['file1']['tmp_name'];
-echo "File size: ".$_FILES['file1']['size'];
-echo "file type: ".$_FILES['file1']['type'];
+echo "File name: ".$_FILES['file1']['name']."<br>";
+echo "Temporary location: ".$_FILES['file1']['tmp_name']."<br>";
+echo "File size: ".$_FILES['file1']['size']."B <br>";
+echo "file type: ".$_FILES['file1']['type']."<br>";
+
+//move_uploaded_file(lokalizacja_tymczasowa, lokazlizacja_docelowa + nazwa_pliku) przenosipliki z l.tymczasowej do l.docelowej
+//is_uploaded_file(lokalizacja_tymczasowa) sprawdza czy plik zostal przeslany
+//is_uploaded_file($_FILES['file1']) druga opcja
+
+$togo = "./";
+if(is_uploaded_file($_FILES['file1']['tmp_name']))
+{
+    if($_FILE['file1']['size']<=$_POST['max_file_size'])
+    {
+        if(move_uploaded_file($_FILES['file1']['tmp_name'],$togo.$_FILES['file1']['name']))
+        {
+            echo "<p style = 'color:green'>done :D</p>"
+        }
+    }
+    if(move_uploaded_file($_FILES['file1']['tmp_name'], $togo.$_FILES['file1']['name']))
+    {
+        echo "<p style = 'color:green'>done :D</p>";
+    }
+}
+else
+{
+    echo "<p style = 'color:red'>the action was not completed :[</p>";
+}
 ?>
