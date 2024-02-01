@@ -5,7 +5,7 @@
         <meta charset="utf-8">
     </head>
     <body>
-        <form action = "form.php" method = "post"> <!--You can use get-->
+        <form action = "formscr.php" method = "post" enctype="multipart/form-data"> <!--You can use get-->
             <fieldset>
                 <legend>Application form</legend>
                 Name:<br>
@@ -32,7 +32,8 @@
                     <option value="py">Python</option>
                 </select><br>
 
-                <label>Submit the file:
+                <label>Submit file:
+                    <input type = 'hidden' name='max_file_size' value = '1024'>
                     <input type = 'file' name = 'file1'>
                 </label>
                
@@ -49,11 +50,6 @@
                 <br>
                 <button type="submit">Submit</button>
                 <button type="reset">Clear</button>
-
-                <label>Submit the file:
-                    <input type = 'file' name = 'file1'>
-                </label>
-                
 
             </fieldset>
         </form>
