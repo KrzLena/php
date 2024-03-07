@@ -1,3 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='utf-8'>
+<style>
+    table
+    {
+        border:solid 5px black;
+        border-collapse: collapse;
+    }
+    th, td
+    {
+        border:solid 2px pink;
+        border-collapse: collapse;
+    }
+
+    
+</style>
+
+</head>
+<body>
 <?php
 $ksiegarnia = mysqli_connect('localhost', 'root', '', 'ksiegarnia');
 if ($ksiegarnia === false)
@@ -60,10 +81,15 @@ echo "</ol>";
 echo "<table style='border:solid 2px black'>";
 $z4 = "SELECT * FROM klient WHERE Nazwisko not like ''";
 $w4 = mysqli_query($ksiegarnia,$z4);
+
+echo "<tr><th>Imie</th><th>Nazwisko</th><th>Numer Tel</th><th>Adres e-mail</th></tr>";
 for ($i = 1; $i <= mysqli_num_rows($w3); $i++)
 {
     $tab4 = mysqli_fetch_array($w4);
-    echo "<tr><td style='border:solid 2px black'>".$tab4['Imie']."</td><td style='border:solid 2px black'>".$tab4['Nazwisko']."</td><td style='border:solid 2px black'>".$tab4['Telefon']."</td><td style='border:solid 2px black'>".$tab4['AdresEmail']."</td></tr>";
+    echo "<tr><td>".$tab4['Imie']."</td><td>".$tab4['Nazwisko']."</td><td>".$tab4['Telefon']."</td><td>".$tab4['AdresEmail']."</td></tr>";
 }
 echo "</table>";
+
 ?>
+</body>
+</html>
