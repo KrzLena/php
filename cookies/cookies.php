@@ -23,7 +23,6 @@ elseif (isset($_COOKIE['wizyta']) && $_POST['p'] == "t")
 else
 {
     echo "witaj na naszej stronie<br>";
-    echo  $_POST['p'];
 }
 echo "<img src='kokardka.png'>";
 echo"</body>";
